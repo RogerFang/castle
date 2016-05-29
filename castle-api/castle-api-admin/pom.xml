@@ -10,7 +10,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.whenling</groupId>
-			<artifactId>castle-domain</artifactId>
+			<artifactId>castle-api-core</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>

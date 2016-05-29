@@ -2,21 +2,15 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.whenling</groupId>
-		<artifactId>castle-provider</artifactId>
+		<artifactId>castle-framework</artifactId>
 		<version>1.0.0.RELEASE</version>
 	</parent>
-	<artifactId>castle-service</artifactId>
+	<artifactId>castle-repo</artifactId>
 
 	<dependencies>
 		<dependency>
-			<groupId>com.whenling</groupId>
-			<artifactId>castle-core</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.whenling</groupId>
-			<artifactId>castle-api-core</artifactId>
-			<version>${project.version}</version>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-commons</artifactId>
 		</dependency>
 	</dependencies>
 </project>

@@ -13,5 +13,7 @@
   	<module>castle-config</module>
   	<module>castle-web-extjs</module>
   	<module>castle-dubbo</module>
+  	<module>castle-repo</module>
+  	<module>castle-repo-mongodb</module>
   </modules>
 </project>

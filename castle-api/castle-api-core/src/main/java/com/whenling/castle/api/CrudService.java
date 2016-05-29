@@ -1,4 +1,4 @@
-package com.whenling.castle.api.admin;
+package com.whenling.castle.api;
 
 import java.util.List;
 
