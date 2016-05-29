@@ -6,12 +6,20 @@ import org.springframework.context.annotation.Configuration;
 
 import com.alibaba.dubbo.config.ApplicationConfig;
 import com.alibaba.dubbo.config.ProtocolConfig;
+import com.alibaba.dubbo.config.ProviderConfig;
 import com.alibaba.dubbo.config.RegistryConfig;
 import com.whenling.castle.framework.dubbo.DubboBeanPostProcessor;
 
 @Configuration
-@ComponentScan("com.whenling.castle.service")
+@ComponentScan("com.whenling.castle")
 public class DubboProviderConfigBean {
+
+	@Bean
+	public ProviderConfig providerConfig() {
+		ProviderConfig providerConfig = new ProviderConfig();
+		providerConfig.setTimeout(10000);
+		return providerConfig;
+	}
 
 	@Bean
 	public ApplicationConfig applicationConfig() {
@@ -32,12 +40,12 @@ public class DubboProviderConfigBean {
 		return config;
 	}
 
-//	@Bean
-//	public DubboBeanScaner dubboBeanScaner() {
-//		DubboBeanScaner scaner = new DubboBeanScaner();
-//		scaner.setPackage("com.whenling.castle.service");
-//		return scaner;
-//	}
+	// @Bean
+	// public DubboBeanScaner dubboBeanScaner() {
+	// DubboBeanScaner scaner = new DubboBeanScaner();
+	// scaner.setPackage("com.whenling.castle.service");
+	// return scaner;
+	// }
 
 	@Bean
 	public DubboBeanPostProcessor dubboBeanPostProcessor() {

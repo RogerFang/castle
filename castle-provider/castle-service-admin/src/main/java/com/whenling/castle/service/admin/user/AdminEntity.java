@@ -1,10 +1,13 @@
-package com.whenling.castle.domain.user;
+package com.whenling.castle.service.admin.user;
 
-import com.whenling.castle.domain.Domain;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-public class Admin extends Domain<String> {
+import com.whenling.castle.framework.repo.mongodb.entity.BizMongoEntity;
 
-	private static final long serialVersionUID = -1468924089303773900L;
+@Document
+public class AdminEntity extends BizMongoEntity<AdminEntity, String> {
+
+	private static final long serialVersionUID = 6554095987798512514L;
 
 	private String username;
 	private String password;

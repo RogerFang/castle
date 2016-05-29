@@ -24,7 +24,7 @@
 		<httpmime.version>4.5.1</httpmime.version>
 		<commons-io.version>2.4</commons-io.version>
 		<commons-configuration.version>1.10</commons-configuration.version>
-		<querydsl.version>3.7.2</querydsl.version>
+		<querydsl.version>4.1.1</querydsl.version>
 	</properties>
 
 	<dependencyManagement>

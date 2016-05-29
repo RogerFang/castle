@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.alibaba.dubbo.config.ApplicationConfig;
+import com.alibaba.dubbo.config.ConsumerConfig;
 import com.alibaba.dubbo.config.RegistryConfig;
 import com.whenling.castle.framework.core.ConsumerSupport;
 import com.whenling.castle.framework.dubbo.DubboBeanPostProcessor;
@@ -11,6 +12,13 @@ import com.whenling.castle.framework.dubbo.DubboBeanPostProcessor;
 @Configuration
 @ConsumerSupport
 public class DubboConsumerConfigBean {
+
+	@Bean
+	public ConsumerConfig consumerConfig() {
+		ConsumerConfig consumerConfig = new ConsumerConfig();
+		consumerConfig.setTimeout(10000);
+		return consumerConfig;
+	}
 
 	@Bean
 	public ApplicationConfig applicationConfig() {

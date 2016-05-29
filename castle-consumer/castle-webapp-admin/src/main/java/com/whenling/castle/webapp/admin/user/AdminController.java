@@ -1,10 +1,13 @@
 package com.whenling.castle.webapp.admin.user;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.whenling.castle.api.admin.user.AdminService;
+import com.whenling.castle.domain.user.Admin;
 import com.whenling.castle.framework.core.Consumer;
 
 @Controller
@@ -16,6 +19,21 @@ public class AdminController {
 
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public void list() {
-		adminService.findAll();
+		List<Admin> admins = adminService.findAll();
+		if (admins != null) {
+			for (Admin admin : admins) {
+				System.out.println(admin.getName());
+			}
+		}
 	}
+
+	@RequestMapping(value = "/save", method = RequestMethod.GET)
+	public void save() {
+		Admin admin = new Admin();
+		admin.setUsername("abcd");
+		admin.setPassword("bbb");
+		admin.setName("essss");
+		adminService.save(admin);
+	}
+
 }

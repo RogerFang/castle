@@ -18,5 +18,10 @@
 			<artifactId>castle-api-core</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>com.whenling</groupId>
+			<artifactId>castle-repo</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 	</dependencies>
 </project>
