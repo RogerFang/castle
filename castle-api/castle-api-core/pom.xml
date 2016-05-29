@@ -2,13 +2,8 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.whenling</groupId>
-    <artifactId>castle</artifactId>
+    <artifactId>castle-api</artifactId>
     <version>1.0.0.RELEASE</version>
   </parent>
-  <artifactId>castle-api</artifactId>
-  <packaging>pom</packaging>
-  <modules>
-  	<module>castle-api-admin</module>
-  	<module>castle-api-core</module>
-  </modules>
+  <artifactId>castle-api-core</artifactId>
 </project>
