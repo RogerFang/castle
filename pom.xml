@@ -12,17 +12,17 @@
 		<jsp-api.version>2.2</jsp-api.version>
 		<jstl.version>1.2</jstl.version>
 		<taglibs.version>1.1.2</taglibs.version>
-		<slf4j.version>1.7.18</slf4j.version>
-		<logback.version>1.1.6</logback.version>
-		<springframework.version>4.2.5.RELEASE</springframework.version>
+		<slf4j.version>1.7.21</slf4j.version>
+		<logback.version>1.1.7</logback.version>
+		<springframework.version>4.2.6.RELEASE</springframework.version>
 		<freemarker.version>2.3.23</freemarker.version>
 		<hibernate-entitymanager.verison>5.1.0.Final</hibernate-entitymanager.verison>
 		<hibernate-validator.version>5.2.4.Final</hibernate-validator.version>
 		<guava.version>19.0</guava.version>
 		<commons-lang3.version>3.4</commons-lang3.version>
 		<commons-beanutils.version>1.9.2</commons-beanutils.version>
-		<httpmime.version>4.5.1</httpmime.version>
-		<commons-io.version>2.4</commons-io.version>
+		<httpmime.version>4.5.2</httpmime.version>
+		<commons-io.version>2.5</commons-io.version>
 		<commons-configuration.version>1.10</commons-configuration.version>
 		<querydsl.version>4.1.1</querydsl.version>
 	</properties>
@@ -221,6 +221,21 @@
 			<id>ibiblio</id>
 			<name>Human Readable Name for this Mirror.</name>
 			<url>http://mirrors.ibiblio.org/pub/mirrors/maven2/</url>
+		</repository>
+		<repository>
+			<id>sonatype-nexus-snapshots</id>
+			<name>Sonatype Nexus Snapshots</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>jboss</id>
+			<url>http://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
 		</repository>
 		<repository>
 			<id>jboss-public-repository-group</id>
