@@ -2,7 +2,7 @@ package com.whenling.castle.service.admin.user;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import com.whenling.castle.framework.repo.mongodb.entity.BizMongoEntity;
+import com.whenling.castle.support.repo.mongodb.entity.BizMongoEntity;
 
 @Document(collection = "admins")
 public class AdminEntity extends BizMongoEntity<AdminEntity, String> {

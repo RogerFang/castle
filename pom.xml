@@ -278,8 +278,7 @@
 	<modules>
 		<module>castle-consumer</module>
 		<module>castle-provider</module>
-		<module>castle-framework</module>
-		<module>castle-domain</module>
+		<module>castle-support</module>
 		<module>castle-api</module>
 	</modules>
 </project>

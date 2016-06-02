@@ -9,9 +9,9 @@ import com.google.common.base.Function;
 import com.google.common.collect.Lists;
 import com.whenling.castle.api.admin.user.AdminService;
 import com.whenling.castle.domain.user.Admin;
-import com.whenling.castle.framework.core.Provider;
 import com.whenling.castle.service.admin.user.AdminEntity;
 import com.whenling.castle.service.admin.user.AdminRepository;
+import com.whenling.castle.support.core.Provider;
 
 @Service
 @Provider

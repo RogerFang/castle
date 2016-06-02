@@ -10,5 +10,6 @@
   <modules>
   	<module>castle-api-admin</module>
   	<module>castle-api-core</module>
+  	<module>castle-domain</module>
   </modules>
 </project>

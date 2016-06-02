@@ -8,7 +8,7 @@ import com.alibaba.dubbo.config.ApplicationConfig;
 import com.alibaba.dubbo.config.ProtocolConfig;
 import com.alibaba.dubbo.config.ProviderConfig;
 import com.alibaba.dubbo.config.RegistryConfig;
-import com.whenling.castle.framework.dubbo.DubboBeanPostProcessor;
+import com.whenling.castle.support.dubbo.DubboBeanPostProcessor;
 
 @Configuration
 @ComponentScan("com.whenling.castle")

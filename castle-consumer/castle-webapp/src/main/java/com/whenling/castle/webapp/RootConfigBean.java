@@ -10,7 +10,7 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
-import com.whenling.castle.framework.core.Consumer;
+import com.whenling.castle.support.core.Consumer;
 
 @Configuration
 @ComponentScan(basePackages = { "com.whenling" }, excludeFilters = { @ComponentScan.Filter(value = Controller.class, type = FilterType.ANNOTATION),

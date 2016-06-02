@@ -6,8 +6,8 @@ import org.springframework.context.annotation.Configuration;
 import com.alibaba.dubbo.config.ApplicationConfig;
 import com.alibaba.dubbo.config.ConsumerConfig;
 import com.alibaba.dubbo.config.RegistryConfig;
-import com.whenling.castle.framework.core.ConsumerSupport;
-import com.whenling.castle.framework.dubbo.DubboBeanPostProcessor;
+import com.whenling.castle.support.core.ConsumerSupport;
+import com.whenling.castle.support.dubbo.DubboBeanPostProcessor;
 
 @Configuration
 @ConsumerSupport

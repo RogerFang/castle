@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.whenling.castle.api.admin.user.AdminService;
 import com.whenling.castle.domain.user.Admin;
-import com.whenling.castle.framework.core.Consumer;
+import com.whenling.castle.support.core.Consumer;
 
 @Controller
 @RequestMapping("/admin/admin")
