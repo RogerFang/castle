@@ -4,7 +4,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.whenling.castle.framework.repo.mongodb.entity.BizMongoEntity;
 
-@Document
+@Document(collection = "admins")
 public class AdminEntity extends BizMongoEntity<AdminEntity, String> {
 
 	private static final long serialVersionUID = 6554095987798512514L;

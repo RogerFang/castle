@@ -15,5 +15,8 @@
   	<module>castle-dubbo</module>
   	<module>castle-repo</module>
   	<module>castle-repo-mongodb</module>
+  	<module>castle-repo-jpa</module>
+  	<module>castle-repo-neo4j</module>
+  	<module>castle-repo-redis</module>
   </modules>
 </project>

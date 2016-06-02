@@ -2,6 +2,7 @@ package com.whenling.castle.framework.repo.mongodb.entity;
 
 import java.io.Serializable;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.domain.Persistable;
 import org.springframework.util.ClassUtils;
 
@@ -9,6 +10,7 @@ public class BaseMongoEntity<I extends Serializable> implements Persistable<I> {
 
 	private static final long serialVersionUID = 7757703016339280358L;
 
+	@Id
 	private I id;
 
 	@Override

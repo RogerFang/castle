@@ -22,7 +22,7 @@ public class AdminController {
 		List<Admin> admins = adminService.findAll();
 		if (admins != null) {
 			for (Admin admin : admins) {
-				System.out.println(admin.getName());
+				System.out.println(admin.getId());
 			}
 		}
 	}
