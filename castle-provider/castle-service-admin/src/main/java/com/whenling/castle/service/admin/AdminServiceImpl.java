@@ -9,7 +9,7 @@ import com.google.common.base.Function;
 import com.google.common.collect.Lists;
 import com.whenling.castle.api.admin.user.AdminService;
 import com.whenling.castle.domain.user.Admin;
-import com.whenling.castle.service.admin.user.AdminEntity;
+import com.whenling.castle.service.admin.user.AdminDoc;
 import com.whenling.castle.service.admin.user.AdminRepository;
 import com.whenling.castle.support.core.Provider;
 
@@ -43,20 +43,20 @@ public class AdminServiceImpl implements AdminService {
 
 	@Override
 	public List<Admin> findAll() {
-		return Lists.transform(adminRepository.findAll(), new Function<AdminEntity, Admin>() {
+		return Lists.transform(adminRepository.findAll(), new Function<AdminDoc, Admin>() {
 			@Override
-			public Admin apply(AdminEntity input) {
+			public Admin apply(AdminDoc input) {
 				return toDomain(input);
 			}
 		});
 	}
 
-	private AdminEntity toEntity(Admin domain) {
+	private AdminDoc toEntity(Admin domain) {
 		if (domain == null) {
 			return null;
 		}
 
-		AdminEntity entity = domain.getId() == null ? new AdminEntity() : adminRepository.findOne(domain.getId());
+		AdminDoc entity = domain.getId() == null ? new AdminDoc() : adminRepository.findOne(domain.getId());
 
 		entity.setUsername(domain.getUsername());
 		entity.setPassword(domain.getPassword());
@@ -67,7 +67,7 @@ public class AdminServiceImpl implements AdminService {
 		return entity;
 	}
 
-	private Admin toDomain(AdminEntity entity) {
+	private Admin toDomain(AdminDoc entity) {
 		if (entity == null) {
 			return null;
 		}
