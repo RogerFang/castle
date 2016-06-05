@@ -1,24 +1,22 @@
 package com.whenling.castle.support.repo.mongodb.entity;
 
-import java.io.Serializable;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.domain.Persistable;
 import org.springframework.util.ClassUtils;
 
-public class BaseMongoEntity<I extends Serializable> implements Persistable<I> {
+public class BaseMongoEntity implements Persistable<String> {
 
 	private static final long serialVersionUID = 7757703016339280358L;
 
 	@Id
-	private I id;
+	private String id;
 
 	@Override
-	public I getId() {
+	public String getId() {
 		return id;
 	}
 
-	protected void setId(final I id) {
+	protected void setId(final String id) {
 		this.id = id;
 	}
 
@@ -57,7 +55,7 @@ public class BaseMongoEntity<I extends Serializable> implements Persistable<I> {
 			return false;
 		}
 
-		BaseMongoEntity<?> that = (BaseMongoEntity<?>) obj;
+		BaseMongoEntity that = (BaseMongoEntity) obj;
 
 		return null == this.getId() ? false : this.getId().equals(that.getId());
 

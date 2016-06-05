@@ -1,13 +1,12 @@
 package com.whenling.castle.support.repo.mongodb.entity;
 
-import java.io.Serializable;
 import java.util.Date;
 
 import org.joda.time.DateTime;
 import org.springframework.data.domain.Auditable;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 
-public class BizMongoEntity<U, I extends Serializable> extends BaseMongoEntity<I>implements Auditable<U, I> {
+public class BizMongoEntity<U> extends BaseMongoEntity implements Auditable<U, String> {
 
 	private static final long serialVersionUID = -2724889340236587124L;
 
