@@ -322,11 +322,16 @@
 		<name>广州当凌信息科技有限公司</name>
 		<url>whenling.com</url>
 	</organization>
+
 	<modules>
-		<module>castle-api</module>
-		<module>castle-consumer</module>
-		<module>castle-provider</module>
-		<module>castle-support</module>
-		<module>castle-test</module>
+		<module>castle-core</module>
+		<module>castle-repo</module>
+		<module>castle-repo-jpa</module>
+		<module>castle-repo-mongo</module>
+		<module>castle-template-groovy</module>
+		<module>castle-template-thymeleaf</module>
+		<module>castle-web</module>
+		<module>castle-web-extjs</module>
+		<module>castle-cache</module>
 	</modules>
 </project>

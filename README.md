@@ -1,8 +1,5 @@
 # Castle
-Castle的目标是打造一个高性能、高扩展性的java开发平台，适合于开发各种互联网软件产品。
-
-## 特点
-Consumer和Provider分离，可选择地使用第三方服务管理框架（默认使用dubbo）。
+Castle是一个java开发库，适合于开发各种互联网软件产品。
 
 ## 主要用到的第三方功能
 * spring-mvc（MVC框架）
