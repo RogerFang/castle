@@ -334,5 +334,6 @@
 		<module>castle-web-extjs</module>
 		<module>castle-cache</module>
 		<module>castle-integration</module>
+		<module>castle-integration-webapp</module>
 	</modules>
 </project>
