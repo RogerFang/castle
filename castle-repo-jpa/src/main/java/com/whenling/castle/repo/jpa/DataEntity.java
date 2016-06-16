@@ -15,22 +15,29 @@ import org.joda.time.DateTime;
 import org.springframework.data.domain.Auditable;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import com.fasterxml.jackson.annotation.JsonView;
+import com.whenling.castle.json.FV;
+
 @MappedSuperclass
 @EntityListeners(value = { AuditingEntityListener.class })
 public class DataEntity<U, I extends Serializable> extends BaseEntity<I>implements Auditable<U, I> {
 
 	private static final long serialVersionUID = 8855403157928861981L;
 
+	@JsonView(FV.Audit.class)
 	@ManyToOne(fetch = FetchType.LAZY)
 	private U createdBy;
 
+	@JsonView(FV.Audit.class)
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(nullable = false, updatable = false)
 	private Date createdDate;
 
+	@JsonView(FV.Audit.class)
 	@ManyToOne(fetch = FetchType.LAZY)
 	private U lastModifiedBy;
 
+	@JsonView(FV.Audit.class)
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(nullable = false)
 	private Date lastModifiedDate;

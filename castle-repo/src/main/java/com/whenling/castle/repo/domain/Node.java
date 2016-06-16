@@ -7,8 +7,8 @@ public class Node<T extends Hierarchical<T>> {
 	private T data;
 	private List<Node<T>> children;
 
-	private boolean checked;
-	private boolean expanded;
+	private Boolean checked;
+	private Boolean expanded;
 	private String iconCls;
 	private String iconPath;
 
@@ -33,19 +33,19 @@ public class Node<T extends Hierarchical<T>> {
 		this.children = children;
 	}
 
-	public boolean isChecked() {
+	public Boolean getChecked() {
 		return checked;
 	}
 
-	public void setChecked(boolean checked) {
+	public void setChecked(Boolean checked) {
 		this.checked = checked;
 	}
 
-	public boolean isExpanded() {
+	public Boolean getExpanded() {
 		return expanded;
 	}
 
-	public void setExpanded(boolean expanded) {
+	public void setExpanded(Boolean expanded) {
 		this.expanded = expanded;
 	}
 

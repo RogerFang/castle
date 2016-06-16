@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.data.repository.NoRepositoryBean;
 
+import com.querydsl.core.types.Predicate;
 import com.whenling.castle.repo.domain.Tree;
 
 @NoRepositoryBean
@@ -13,9 +14,11 @@ public interface HierarchicalJpaRepository<T extends HierarchicalEntity<?, I, T>
 
 	List<T> findRoots();
 
-	List<T> findAllChildren(T current);
+	List<T> findAllChildren(T root);
 
-	Tree<T> findTree(T current);
+	Tree<T> findByRoot(T root);
+
+	Tree<T> findTree(Predicate predicate);
 
 	Tree<T> toTree(T current, List<T> nodes);
 }

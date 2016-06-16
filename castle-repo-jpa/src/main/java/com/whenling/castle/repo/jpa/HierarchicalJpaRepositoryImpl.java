@@ -11,6 +11,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.support.JpaEntityInformation;
 
 import com.google.common.base.Objects;
+import com.querydsl.core.types.Predicate;
 import com.whenling.castle.repo.domain.Node;
 import com.whenling.castle.repo.domain.SortNoComparator;
 import com.whenling.castle.repo.domain.Tree;
@@ -29,14 +30,20 @@ public class HierarchicalJpaRepositoryImpl<T extends HierarchicalEntity<?, I, T>
 	}
 
 	@Override
-	public List<T> findAllChildren(T current) {
-		return getQuery(new AllChildrenSpecification<>(current, "treePath"), (Sort) null).getResultList();
+	public List<T> findAllChildren(T root) {
+		return getQuery(new AllChildrenSpecification<>(root, "treePath"), (Sort) null).getResultList();
 	}
 
 	@Override
-	public Tree<T> findTree(T current) {
-		List<T> allChildren = current == null ? findAll() : findAllChildren(current);
-		return toTree(current, allChildren);
+	public Tree<T> findTree(Predicate predicate) {
+		List<T> allChildren = findAll(predicate);
+		return toTree(null, allChildren);
+	}
+
+	@Override
+	public Tree<T> findByRoot(T root) {
+		List<T> allChildren = root == null ? findAll() : findAllChildren(root);
+		return toTree(root, allChildren);
 	}
 
 	@Override
@@ -67,4 +74,5 @@ public class HierarchicalJpaRepositoryImpl<T extends HierarchicalEntity<?, I, T>
 		node.setChildren(children);
 		return node;
 	}
+
 }

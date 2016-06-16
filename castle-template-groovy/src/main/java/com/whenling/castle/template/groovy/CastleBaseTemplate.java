@@ -2,6 +2,7 @@ package com.whenling.castle.template.groovy;
 
 import java.util.Map;
 
+import com.whenling.castle.core.StaticConfigSupplier;
 import com.whenling.castle.web.WebSpringContext;
 
 import groovy.text.markup.BaseTemplate;
@@ -15,6 +16,7 @@ public abstract class CastleBaseTemplate extends BaseTemplate {
 		super(templateEngine, model, modelTypes, configuration);
 
 		model.put("base", WebSpringContext.getContextPath());
+		model.put("staticConfig", new ConfigWrapper(StaticConfigSupplier.getConfiguration()));
 	}
 
 }

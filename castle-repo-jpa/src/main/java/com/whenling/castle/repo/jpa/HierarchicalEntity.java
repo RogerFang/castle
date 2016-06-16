@@ -13,6 +13,8 @@ import javax.persistence.MappedSuperclass;
 import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
 
+import com.fasterxml.jackson.annotation.JsonView;
+import com.whenling.castle.json.FV;
 import com.whenling.castle.repo.domain.Hierarchical;
 
 @MappedSuperclass
@@ -21,14 +23,17 @@ public class HierarchicalEntity<U, I extends Serializable, T> extends SortEntity
 
 	private static final long serialVersionUID = 4795899175741576611L;
 
+	@JsonView(FV.None.class)
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "parent_id")
 	private T parent;
 
+	@JsonView(FV.None.class)
 	@OneToMany(mappedBy = "parent", fetch = FetchType.LAZY, cascade = { CascadeType.REMOVE })
 	@OrderBy("sortNo asc")
 	private List<T> children;
 
+	@JsonView(FV.None.class)
 	@Column(length = 500)
 	private String treePath;
 
