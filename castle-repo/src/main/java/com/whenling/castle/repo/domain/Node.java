@@ -7,10 +7,10 @@ public class Node<T extends Hierarchical<T>> {
 	private T data;
 	private List<Node<T>> children;
 
+	private Tree<T> tree;
+
 	private Boolean checked;
 	private Boolean expanded;
-	private String iconCls;
-	private String iconPath;
 
 	public boolean getLeaf() {
 		List<Node<T>> children = getChildren();
@@ -49,20 +49,12 @@ public class Node<T extends Hierarchical<T>> {
 		this.expanded = expanded;
 	}
 
-	public String getIconCls() {
-		return iconCls;
+	public Tree<T> getTree() {
+		return tree;
 	}
 
-	public void setIconCls(String iconCls) {
-		this.iconCls = iconCls;
-	}
-
-	public String getIconPath() {
-		return iconPath;
-	}
-
-	public void setIconPath(String iconPath) {
-		this.iconPath = iconPath;
+	public void setTree(Tree<T> tree) {
+		this.tree = tree;
 	}
 
 }

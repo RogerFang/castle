@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.function.Consumer;
 
 import javax.persistence.EntityManager;
 
@@ -55,7 +56,19 @@ public class HierarchicalJpaRepositoryImpl<T extends HierarchicalEntity<?, I, T>
 			directSubordinates = new ArrayList<>();
 			directSubordinates.add(root);
 		}
-		return new TreeImpl<>(directSubordinates);
+
+		Tree<T> tree = new TreeImpl<>(directSubordinates);
+		visitNodes(tree.getRoots(), node -> node.setTree(tree));
+		return tree;
+	}
+
+	protected void visitNodes(List<? extends Node<T>> nodes, Consumer<Node<T>> consumer) {
+		if (nodes != null) {
+			nodes.forEach((node) -> {
+				consumer.accept(node);
+				visitNodes(node.getChildren(), consumer);
+			});
+		}
 	}
 
 	protected List<Node<T>> findDirectSubordinates(T root, List<T> allChildren) {

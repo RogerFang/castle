@@ -15,6 +15,7 @@ import org.springframework.web.servlet.mvc.method.annotation.AbstractMappingJack
 
 import com.google.common.base.Objects;
 import com.whenling.castle.json.FV;
+import com.whenling.castle.repo.domain.Tree;
 
 @ControllerAdvice
 @Order(value = Ordered.LOWEST_PRECEDENCE)
@@ -23,22 +24,28 @@ public class JsonResponseBodyAdvice extends AbstractMappingJacksonResponseBodyAd
 	@Override
 	protected void beforeBodyWriteInternal(MappingJacksonValue bodyContainer, MediaType contentType,
 			MethodParameter returnType, ServerHttpRequest request, ServerHttpResponse response) {
-		if (bodyContainer.getValue() != null) {
+		Object value = bodyContainer.getValue();
+		if (value != null) {
 			HttpServletRequest httpRequest = ((ServletServerHttpRequest) request).getServletRequest();
 			String jsonView = httpRequest.getParameter("json_view");
 
+			Class<?> viewClass = FV.Simple.class;
 			if (Objects.equal(jsonView, "detail")) {
-				bodyContainer.setSerializationView(FV.Detail.class);
+				viewClass = FV.Detail.class;
 			} else if (Objects.equal(jsonView, "simple")) {
-				bodyContainer.setSerializationView(FV.Simple.class);
+				viewClass = FV.Simple.class;
 			} else if (Objects.equal(jsonView, "full")) {
-				bodyContainer.setSerializationView(FV.Full.class);
+				viewClass = FV.Full.class;
 			} else if (Objects.equal(jsonView, "audit")) {
-				bodyContainer.setSerializationView(FV.Audit.class);
+				viewClass = FV.Audit.class;
 			} else if (Objects.equal(jsonView, "none")) {
 				throw new UnsupportedOperationException();
-			} else {
-				bodyContainer.setSerializationView(FV.Simple.class);
+			}
+
+			bodyContainer.setSerializationView(viewClass);
+
+			if (value instanceof Tree) {
+				((Tree<?>) value).setNodeView(viewClass);
 			}
 		}
 

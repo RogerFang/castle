@@ -9,7 +9,8 @@ public class TreeImpl<T extends Hierarchical<T>> implements Tree<T> {
 	private Set<T> checked;
 	private boolean checkable = false;
 	private boolean expendAll = false;
-	private String iconProperty;
+
+	private Class<?> nodeView;
 
 	public TreeImpl(List<Node<T>> roots) {
 		this.roots = roots;
@@ -51,13 +52,13 @@ public class TreeImpl<T extends Hierarchical<T>> implements Tree<T> {
 	}
 
 	@Override
-	public void setIconProperty(String propertyName) {
-		this.iconProperty = propertyName;
+	public Class<?> getNodeView() {
+		return nodeView;
 	}
 
 	@Override
-	public String getIconProperty() {
-		return iconProperty;
+	public void setNodeView(Class<?> viewClass) {
+		this.nodeView = viewClass;
 	}
 
 }

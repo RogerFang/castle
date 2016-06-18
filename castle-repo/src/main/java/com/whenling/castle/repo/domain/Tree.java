@@ -19,8 +19,8 @@ public interface Tree<T extends Hierarchical<T>> {
 
 	void makeExpandAll();
 
-	void setIconProperty(String propertyName);
+	Class<?> getNodeView();
 
-	String getIconProperty();
+	void setNodeView(Class<?> viewClass);
 
 }
