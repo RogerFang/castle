@@ -22,7 +22,6 @@ import org.springframework.data.repository.support.DomainClassConverter;
 import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
 import org.springframework.data.web.ProxyingHandlerMethodArgumentResolver;
 import org.springframework.data.web.SortHandlerMethodArgumentResolver;
-import org.springframework.data.web.querydsl.QuerydslPredicateArgumentResolver;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.format.support.FormattingConversionService;
 import org.springframework.http.converter.ByteArrayHttpMessageConverter;
@@ -36,6 +35,7 @@ import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.whenling.castle.integration.webapp.querydsl.FilterPredicateArgumentResolver;
 import com.whenling.castle.web.ServletSupport;
 
 @ServletSupport
@@ -116,8 +116,9 @@ public class WebappConfigBean extends WebMvcConfigurerAdapter implements Applica
 	}
 
 	@Bean
-	public QuerydslPredicateArgumentResolver querydslPredicateArgumentResolver() {
-		return new QuerydslPredicateArgumentResolver(querydslBindingsFactory(), conversionService.getObject());
+	public FilterPredicateArgumentResolver querydslPredicateArgumentResolver() {
+		return new FilterPredicateArgumentResolver(querydslBindingsFactory(), conversionService.getObject(),
+				objectMapper);
 	}
 
 	@Lazy
