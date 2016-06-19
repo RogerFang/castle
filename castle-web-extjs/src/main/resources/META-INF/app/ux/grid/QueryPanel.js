@@ -1,6 +1,6 @@
-Ext.define('app.ux.grid.FilterPanel', {
+Ext.define('app.ux.grid.QueryPanel', {
 	extend : "Ext.form.Panel",
-	alias : "widget.filterpanel",
+	alias : "widget.querypanel",
 	border : false,
 	frame : false,
 	layout : "fit",
@@ -37,7 +37,7 @@ Ext.define('app.ux.grid.FilterPanel', {
 				},
 				items : [ {
 					text : "搜索",
-					iconCls : "Magnifier",
+					iconCls : "fa fa-search",
 					xtype : "button",
 					handler : function() {
 						var formPanel = this.up("form");
@@ -63,7 +63,7 @@ Ext.define('app.ux.grid.FilterPanel', {
 					}
 				}, {
 					text : "重置",
-					iconCls : "Arrowredo",
+					iconCls : "fa fa-undo",
 					xtype : "button",
 					handler : function() {
 						var formPanel = this.up("form");
